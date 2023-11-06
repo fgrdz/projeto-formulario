@@ -1,0 +1,22 @@
+.container-banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    border-bottom: 1px solid #f2f2f3;
+}
+.container-banner img{
+    margin-left: 80px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: auto;
+}
+.container-banner .divisoria{
+    border-right: 1px solid #333333;
+    transform: rotate(25deg)
+
+}
