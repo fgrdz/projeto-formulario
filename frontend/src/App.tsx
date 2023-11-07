@@ -1,5 +1,5 @@
 import Banner from "./components/molecules/banner/banner";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/bootstrap.min.css'
 import Nav from "./components/organisms/nav/Nav";
 import "./global.css"
 function App() {
