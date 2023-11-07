@@ -1,3 +1,10 @@
+# Ferramentas e linguagens
+- Typescript
+- React
+- Axios
+- Bootstrap
+- React-hook-form
+- Yup
 # Cores
 Peguei cores no site da cox automotive via extensão do chrome
 - #F8991D
