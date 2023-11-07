@@ -1,6 +1,5 @@
 import Banner from "./components/molecules/banner/banner";
-import Forms from "./components/molecules/form/Forms";
-import Listagem from "./components/molecules/listagem/Listagem";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from "./components/organisms/nav/Nav";
 import "./global.css"
 function App() {
