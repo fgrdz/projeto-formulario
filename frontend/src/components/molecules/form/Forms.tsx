@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import Button from "../../atoms/button/Button";
-import 'bootstrap/dist/css/bootstrap.css';
 import api from "../../../services/api/api";
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from "../../../Utils/store";
