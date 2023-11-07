@@ -1,6 +1,6 @@
 import image from '../../../assets/logo.svg'
 import './banner.css'
-import 'bootstrap'
+
 
 
 const Banner =()=>{
