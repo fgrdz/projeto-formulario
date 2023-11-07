@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import NavItem from '../../atoms/navItem/navItem';
 import Formulario from '../../molecules/form/Forms'; 
 import Tabela from '../../molecules/listagem/Listagem'; 
