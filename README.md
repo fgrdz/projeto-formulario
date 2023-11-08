@@ -3,8 +3,12 @@
 O formulário para cadastro consome a API Viacep, gratuita, para preenchimento dos dados de endereço. Também foi colocado validação nos campos do formulário.
 Prezei por um design simples por se tratar de um formulário visando a eficiência.
 <br>
-Clique no link para um vídeo demonstração:
-[Video](/frontend/src/assets/Demo.mp4)
+Clique no vídeo demonstração:
+
+https://github.com/fgrdz/projeto-formulario/assets/109359994/cb15743e-6062-4366-a316-4aba2aaf41ca
+
+
+
 ## Como rodar
 - npm install para instalar dependencias
 - Para executar o servidor do backend, basta utilizar o comando *node server.js ou ts-node server.ts*
