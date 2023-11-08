@@ -1,3 +1,6 @@
+# Como rodar
+- npm install para instalar dependencias
+- Aplicativo usando API própria, para executar utilizar o comando ts-node server.ts
 # Ferramentas e linguagens
 - Typescript
 - React

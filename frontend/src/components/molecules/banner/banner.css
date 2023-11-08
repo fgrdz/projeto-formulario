@@ -20,3 +20,15 @@
     transform: rotate(25deg)
 
 }
+@media (max-width: 600px){
+    .container-banner img{
+        margin-left: 0px;
+    }
+    .container-banner{
+        flex-direction: column;
+    }
+    .container-banner .divisoria{
+        display: none;
+    }
+
+}

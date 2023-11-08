@@ -16,14 +16,20 @@ interface EnderecoState {
     uf: "",
   };
   
-  type EnderecoAction = { type: 'UPDATE_ENDERECO'; payload: EnderecoState };
+  type EnderecoAction = { type: string; payload: EnderecoState };
   
   const enderecoReducer = (state: EnderecoState = initialState, action: EnderecoAction): EnderecoState => {
+    
     switch (action.type) {
       case 'UPDATE_ENDERECO':
         return { ...state, ...action.payload };
+      case 'CLEAN':
+        
+        return initialState;
       default:
+        
         return state;
+        
     }
   };
   

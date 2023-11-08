@@ -13,13 +13,8 @@ const Nav = () => {
 
   return (
     <div className="container">
-      <ul className="nav nav-tabs">
-        <NavItem nome={'Cadastro'} isActive={navIndex === 'Cadastrar'} onClick={() => handleClick('Cadastrar')} />
-        <NavItem nome={'Verificar'} isActive={navIndex === 'Verificar'} onClick={() => handleClick('Verificar')} />
-      </ul>
       <div className="container-elementos">
-        {navIndex === 'Cadastrar' && <Formulario />}
-        {navIndex === 'Verificar' && <Tabela />} 
+       <Formulario/>
       </div>
       
     </div>
