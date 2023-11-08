@@ -9,9 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 app.use(express.json());
+app.use(cors());
 app.get('/endereco/:cep', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { cep } = req.params;
     try {
