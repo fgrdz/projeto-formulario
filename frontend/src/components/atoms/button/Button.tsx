@@ -1,8 +1,11 @@
 import './button.css'
-const Button = ()=>{
+interface ButtonProps{
+    texto:string
+}
+const Button = ({texto}:ButtonProps)=>{
     return(
         <>
-            <button>Enviar</button>
+            <button>{texto}</button>
         </>
     )
 }

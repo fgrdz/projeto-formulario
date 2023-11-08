@@ -15,6 +15,9 @@
     width: 150px;
     height: auto;
 }
+.container-banner li{
+    cursor: pointer;
+}
 .container-banner .divisoria{
     border-right: 1px solid #333333;
     transform: rotate(25deg)

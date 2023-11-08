@@ -13,6 +13,7 @@ const Nav = () => {
 
   return (
     <div className="container">
+      <h1>Seção Cadastro</h1>
       <div className="container-elementos">
        <Formulario/>
       </div>

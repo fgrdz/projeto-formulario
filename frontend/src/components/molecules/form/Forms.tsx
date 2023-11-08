@@ -76,8 +76,8 @@ const Forms = () => {
   
 
   return (
-    <div className="container">
-      <h1>Cadastro de endereço</h1>
+    <div className="container-form">
+      <h2>Cadastro de endereço</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
           <div className="col-md-8">
@@ -154,17 +154,21 @@ const Forms = () => {
           <div className="col-md-6">
             <div className="form-group">
               <label>Complemento</label>
-              <input type="text" className="form-control" {...register("complemento")}  />
+              <input type="text" className="form-control " {...register("complemento")}  />
               <p className="erro-message">{errors.complemento?.message}</p>
             </div>
           </div>
         </div>
 
         <div className="botao-form">
-          <Button />
+          <Button texto= {"Enviar"} />
         </div>
       </form>
-      <Listagem dados={dados}  />
+      <div className="container-listagem">
+        <h3>Lista de endereços</h3>
+        <Listagem dados={dados}  />
+      </div>
+      
     </div>
   );
 }
