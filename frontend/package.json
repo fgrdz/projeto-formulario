@@ -50,10 +50,6 @@
     "@testing-library/jest-dom": "^6.1.4",
     "@types/bootstrap": "^5.2.8",
     "jest": "^27.5.1"
-  },
-  "jest": { 
-  "transform": {
-    "^.+\\.jsx?$": "babel-jest"
   }
-}
+
 }
