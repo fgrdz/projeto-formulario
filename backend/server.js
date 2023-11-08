@@ -7,8 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import express from 'express';
-import axios from 'axios';
+const express = require('express');
+const axios = require('axios');
 const app = express();
 const port = 3000;
 app.use(express.json());
