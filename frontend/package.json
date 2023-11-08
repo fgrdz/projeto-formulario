@@ -2,9 +2,9 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
-    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
@@ -47,6 +47,13 @@
     ]
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.2.8"
+    "@testing-library/jest-dom": "^6.1.4",
+    "@types/bootstrap": "^5.2.8",
+    "jest": "^27.5.1"
+  },
+  "jest": { 
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
   }
+}
 }
