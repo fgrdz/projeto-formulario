@@ -8,6 +8,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import './forms.css'
 import { useState } from "react";
 import Listagem from "../listagem/Listagem";
+import { useTranslation } from 'react-i18next';
 
 const validationSchema = yup.object().shape({
   nome: yup.string().required("Campo obrigatório") ,
@@ -22,6 +23,8 @@ const validationSchema = yup.object().shape({
 })
 
 const Forms = () => {
+  const { t } = useTranslation();
+
   const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm({resolver: yupResolver(validationSchema)});
   
   const [dados, setDados] =useState<{ nome: string; endereco: string, novoEndereco: boolean }[]>([]);;
@@ -75,100 +78,99 @@ const Forms = () => {
 
   
 
+
   return (
     <div className="container-form">
-      <h2>Cadastro de endereço</h2>
+      <h2>{t('addressRegistration')}</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
           <div className="col-md-8">
             <div className="form-group">
-              <label>Nome</label>
+              <label>{t('name')}</label>
               <input type="text" className="form-control" {...register("nome")} />
               <p className="erro-message">{errors.nome?.message}</p>
             </div>
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>Apelido</label>
+              <label>{t('nickname')}</label>
               <input type="text" className="form-control" {...register("apelido")} />
               <p className="erro-message">{errors.apelido?.message}</p>
             </div>
           </div>
         </div>
+
         <div className="row">
           <div className="col-md-4">
             <div className="form-group">
-              <label>CEP</label>
+              <label>{t('zipCode')}</label>
               <input
                 type="number"
-                
                 className="form-control"
                 {...register("cep")}
                 onChange={handleCEPChange} 
-                
               />
               <p className="erro-message">{errors.cep?.message}</p>
             </div>
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>UF</label>
+              <label>{t('state')}</label>
               <input type="text" className="form-control" {...register("uf")} value={enderecoData.uf} />
             </div>
             <p className="erro-message">{errors.uf?.message}</p>
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>Cidade</label>
+              <label>{t('city')}</label>
               <input type="text" className="form-control" {...register("cidade")} value={enderecoData.localidade} />
               <p className="erro-message">{errors.cidade?.message}</p>
             </div>
           </div>
         </div>
+
         <div className="row">
           <div className="col-md-10">
             <div className="form-group">
-              <label>Logradouro</label>
-              
-                <input type="text" className="form-control" {...register("logradouro")} value={enderecoData.logradouro===''? logradouro: enderecoData.logradouro} onChange={(e)=>setLogradouro(e.target.value)}/>
-         
+              <label>{t('street')}</label>
+              <input type="text" className="form-control" {...register("logradouro")} value={enderecoData.logradouro === '' ? logradouro : enderecoData.logradouro} onChange={(e) => setLogradouro(e.target.value)} />
               <p className="erro-message">{errors.logradouro?.message}</p>
             </div>
           </div>
           <div className="col-md-2">
             <div className="form-group">
-              <label>Numero</label>
+              <label>{t('number')}</label>
               <input type="number" className="form-control" {...register("numero")} />
               <p className="erro-message">{errors.numero?.message}</p>
             </div>
           </div>
         </div>
+
         <div className="row">
-        <div className="col-md-6">
-          <div className="form-group">
-            <label>Bairro</label>
-              <input type="text" className="form-control" {...register("bairro")} value={enderecoData.bairro === ''? bairro : enderecoData.bairro} onChange={(e)=>setBairro(e.target.value)} />
-            <p className="erro-message">{errors.bairro?.message}</p>
-          </div>
-        </div>
           <div className="col-md-6">
             <div className="form-group">
-              <label>Complemento</label>
-              <input type="text" className="form-control " {...register("complemento")}  />
+              <label>{t('neighborhood')}</label>
+              <input type="text" className="form-control" {...register("bairro")} value={enderecoData.bairro === '' ? bairro : enderecoData.bairro} onChange={(e) => setBairro(e.target.value)} />
+              <p className="erro-message">{errors.bairro?.message}</p>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="form-group">
+              <label>{t('complement')}</label>
+              <input type="text" className="form-control" {...register("complemento")} />
               <p className="erro-message">{errors.complemento?.message}</p>
             </div>
           </div>
         </div>
 
         <div className="botao-form">
-          <Button texto= {"Enviar"} />
+          <Button texto={t('submit')} />
         </div>
       </form>
       <div className="container-listagem">
-        <h3>Lista de endereços</h3>
+        <h3>{t('addressList')}</h3>
         <Listagem dados={dados} setDados={setDados}/>
       </div>
-      
     </div>
   );
 }

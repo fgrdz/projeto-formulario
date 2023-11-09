@@ -1,0 +1,19 @@
+.container-language button{
+
+    background-color: transparent;
+    width: 50px;
+    margin-top: 5px;
+    margin-left: 2px;
+    height: 40px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    color: #333333;
+    
+    
+}
+.container-language button:hover{
+    background-color: #333333;
+    color: #fff;
+ 
+    
+}
