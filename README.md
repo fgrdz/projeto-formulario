@@ -14,9 +14,10 @@ https://github.com/fgrdz/projeto-formulario/assets/109359994/27948ac8-c403-469e-
 
 
 
-## Como rodar
-- Abra o diretório frontend no terminal com o comando `cd frontend` depois use ```npm install``` ou ```npm install --force``` para instalar dependencias
-- Para executar o servidor do backend, basta utilizar o comando 'node server.js' ou 'ts-node server.ts'
+## Como rodar o projeto na sua máquina
+- Clone o repositório usando o comando `git clone https://github.com/fgrdz/projeto-formulario.git`
+- Abra o diretório **frontend** no terminal com o comando `cd frontend` depois use ```npm install``` ou ```npm install --force``` para instalar dependencias
+- Para executar o servidor do backend, alterne para o diretório backend com o comando `cd frontend`, depois basta utilizar o comando `node server.js` ou `ts-node server.ts`
 - Fiz o deploy do frontend e da API no Render, serviço de deploy gratuito(como Vercel, Heroku) a partir do repositório github.
   <br>
 **Disponível** em https://cox-cadastro.onrender.com/
