@@ -1,29 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
 interface ListagemProps {
-  dados: { nome: string; endereco: string }[];
+  dados: { nome: string; endereco: string, novoEndereco: boolean }[];
+  setDados: any;
 }
 
-const Listagem: React.FC<ListagemProps> = ({ dados }) => {
-  const [novoEnd, setNovoEnd] = useState<{ [key: string]: boolean }>({});
+const Listagem: React.FC<ListagemProps> = ({ dados, setDados }) => {
 
   useEffect(() => {
-    const enderecosUnicos: { [key: string]: boolean } = {};
-
-    dados.forEach((data) => {
-      enderecosUnicos[data.endereco] = true;
-    });
-
-    setNovoEnd(enderecosUnicos);
+    const lastIndex = dados.length-1;
+    for(let i = 0; i < dados.length; i++){
+      if((dados[lastIndex].nome === dados[i].nome) && (dados[lastIndex].endereco !== dados[i].endereco)){
+        const copiaDados = [...dados];
+        copiaDados[i].endereco = dados[lastIndex].endereco;
+        copiaDados[i].novoEndereco = true;
+        copiaDados.pop();
+        setDados(copiaDados);
+      } 
+    }
   }, [dados]);
 
-  const isEnderecoCadastrado = (endereco: string) => {
-    if (novoEnd[endereco]) {
-      return "sim";
-    } else {
-      return "nao";
-    }
-  };
 
   return (
     <div className="container">
@@ -32,7 +28,7 @@ const Listagem: React.FC<ListagemProps> = ({ dados }) => {
           <tr>
             <th scope="col">Nome</th>
             <th scope="col">Endereço</th>
-            <th scope="col">Endereço Cadastrado</th>
+            <th scope="col">Novo Endereço?</th>
           </tr>
         </thead>
         <tbody>
@@ -40,7 +36,7 @@ const Listagem: React.FC<ListagemProps> = ({ dados }) => {
             <tr key={index}>
               <td>{data.nome}</td>
               <td>{data.endereco}</td>
-              <td>{isEnderecoCadastrado(data.endereco)}</td>
+              <td>{data.novoEndereco ? "Sim" : "Não"}</td>
             </tr>
           ))}
         </tbody>

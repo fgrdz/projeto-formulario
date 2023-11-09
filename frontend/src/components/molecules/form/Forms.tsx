@@ -24,7 +24,7 @@ const validationSchema = yup.object().shape({
 const Forms = () => {
   const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm({resolver: yupResolver(validationSchema)});
   
-  const [dados, setDados] =useState<{ nome: string; endereco: string }[]>([]);;
+  const [dados, setDados] =useState<{ nome: string; endereco: string, novoEndereco: boolean }[]>([]);;
   const enderecoData = useSelector((state: RootState) => state.endereco);
   const [logradouro, setLogradouro] = useState('')
   const [bairro, setBairro] = useState('')
@@ -61,7 +61,7 @@ const Forms = () => {
   };
 
   const onSubmit = (data: any) => {
-    const newData = { nome: data.nome, endereco: data.cep };
+    const newData = { nome: data.nome, endereco: data.cep, novoEndereco: data.novoEndereco };
     setDados([...dados, newData]);
     dispatch({
       type: 'CLEAN',
@@ -166,7 +166,7 @@ const Forms = () => {
       </form>
       <div className="container-listagem">
         <h3>Lista de endereços</h3>
-        <Listagem dados={dados}  />
+        <Listagem dados={dados} setDados={setDados}/>
       </div>
       
     </div>
